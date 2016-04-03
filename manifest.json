@@ -1,0 +1,31 @@
+{
+	// Google Extension Manifest Version
+	"manifest_version": 2,
+
+	"name": "Cozy Page Width",
+	"description": "An easy button for making webpages more readable when the lines are too wide for comfort. With one click, it narrows the width of the page.",
+	"version": "0.1",
+	// Extension Icon
+	"icons": {
+        "16": "icon.png"
+    },
+
+	// Toolbar
+	"browser_action": {
+        "default_icon": "icon.png",
+        "default_title": "Make this page easier on the eyes"
+    },
+
+	// Context scripts can read or modify the details of a webpage
+	"content_scripts": [
+        {
+            "matches": ["<all_urls>"],
+            "css": ["content.css"],
+            "js": ["content.js"],
+            "run_at": "document_start"
+        }
+    ],
+
+	
+
+}
