@@ -18,3 +18,5 @@ It simply adds 25% left and right margins to the webpage with one click.
 
 I'd like to expand on this but it's usually good enough for around 90% of the sites out there.
 
+This was originally part of a project I started for learning how to make Chrome extensions that I've pulled into its own extension.
+
