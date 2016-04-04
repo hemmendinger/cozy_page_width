@@ -10,7 +10,10 @@ chrome.runtime.onMessage.addListener(
         if (request.backgroundClick == true) {
             setMarginPercent(25, 25);
             sendResponse(
-				{result: "content.js processed backgroundClick == true"});
+				{result: "content.js processed backgroundClick == true"}
+			);
+			// Send response asynchronously
+			return true; 
         }
 });
 
