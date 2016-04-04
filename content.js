@@ -1,5 +1,5 @@
 function setMarginPercent(leftMarginInt, rightMarginInt) {
-    document.body.style.leftMargin = leftMarginInt + "%";
+    document.body.style.marginLeft = leftMarginInt + "%";
     document.body.style.marginRight = rightMarginInt + "%";
 }
 
