@@ -1,6 +1,10 @@
 # Cozy Page Width
 An easy button for making webpages more readable when the lines are too wide for comfort. With one click, it narrows the width of the page.
 
+A second click narrows it once more.
+
+A third click returns to the webpage default.
+
 
 ## Why?
 

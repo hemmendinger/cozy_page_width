@@ -1,8 +1,8 @@
 // State of margins for toggling changes
 var cozy_settings = {
-	origMarginLeft: "",
-	origMarginRight: "",
-	margins_changed: false,
+	defaultMarginLeft: "",
+	defaultMarginLeft: "",
+	margin_state: 0,
 };
 
 
@@ -17,19 +17,25 @@ function setMarginPercent(leftMarginInt, rightMarginInt) {
 chrome.runtime.onMessage.addListener(
 	function(request, sender, sendResponse) {
         if (request.backgroundClick == true) {
-			
-			if (cozy_settings.margins_changed == false) {
-				// If not changed, then set left and rightmargins to 25%
-				cozy_settings.origMarginLeft = (document.body.style !== null) ? document.body.style.marginLeft : "";
-				cozy_settings.origMarginRight = (document.body.style !== null) ? document.body.style.marginRight : "";
+			// margin option 0: default
+			// margin option 1: 25%
+			// margin option 2: 35%
+			if (cozy_settings.margin_state == 0) {
+				// If default, set left/right margins to 25%
+				cozy_settings.defaultMarginLeft = (document.body.style !== null) ? document.body.style.marginLeft : "";
+				cozy_settings.defaultMarginLeft = (document.body.style !== null) ? document.body.style.marginRight : "";
 				setMarginPercent(25, 25);
-				cozy_settings.margins_changed = true;
+				cozy_settings.margin_state = 1;
+			} else if (cozy_settings.margin_state == 1) {
+				// If default, set left/right margins to 35%
+				setMarginPercent(35, 35);
+				cozy_settings.margin_state = 2;
 			} else {
-				// If changed, then set the margins back to their original settings
-				document.body.style.marginLeft = cozy_settings.origMarginLeft;
-				document.body.style.marginRight = cozy_settings.origMarginRight;
-				cozy_settings.margins_changed = false;
-			}
+				// Set margins to default
+				document.body.style.marginLeft = cozy_settings.defaultMarginLeft;
+				document.body.style.marginRight = cozy_settings.defaultMarginLeft;
+				cozy_settings.margin_state = 0;
+            }
 
             sendResponse(
 				{result: "content.js processed backgroundClick == true"}
