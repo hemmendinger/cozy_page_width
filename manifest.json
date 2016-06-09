@@ -3,16 +3,18 @@
 	"manifest_version": 2,
 
 	"name": "Cozy Page Width",
-	"description": "An easy button for making webpages more readable when the lines are too wide for comfort. With one click, it narrows the width of the page.",
-	"version": "0.1",
+	"description": "For when a website's text runs across the screen, problematic on larger displays. One click to adjust the width of an article for a more natural news column/paperback reading feel.",
+	"version": "0.2",
 	// Extension Icon
 	"icons": {
-        "16": "icon-v3-16.png"
+        "16": "icon-16.png",
+		"48": "icon-48.png",
+		"128": "icon-128.png"
     },
 
 	// Toolbar
 	"browser_action": {
-        "default_title": "Make this page easier on the eyes"
+        "default_title": "Adjust the page margins to improve readability."
     },
 
 	// Context scripts can read or modify the details of a webpage
