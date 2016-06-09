@@ -3,8 +3,8 @@
 	"manifest_version": 2,
 
 	"name": "Cozy Page Width",
-	"description": "For when a website's text runs across the screen, problematic on larger displays. One click to adjust the width of an article for a more natural news column/paperback reading feel.",
-	"version": "0.2",
+	"description": "Text on larger displays runs across the screen, click to adjust the page margins for a more natural column/paperback reading feel.",
+	"version": "0.3",
 	// Extension Icon
 	"icons": {
         "16": "icon-16.png",
