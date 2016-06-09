@@ -1,24 +1,24 @@
 {
-	// Google Extension Manifest Version
-	"manifest_version": 2,
-
-	"name": "Cozy Page Width",
-	"description": "Text on larger displays runs across the screen, click to adjust the page margins for a more natural column/paperback reading feel.",
-	"version": "0.3",
-	// Extension Icon
-	"icons": {
+    // Google Extension Manifest Version
+    "manifest_version": 2,
+    "name": "Cozy Page Width",
+    "description": "Text on larger displays runs across the screen, click to adjust the page margins for a more natural column/paperback reading feel.",
+    "author" : "Jason Hemmendinger",
+    "version": "0.3",
+    // Extension Icon
+    "icons": {
         "16": "icon-16.png",
-		"48": "icon-48.png",
-		"128": "icon-128.png"
+        "48": "icon-48.png",
+        "128": "icon-128.png"
     },
 
-	// Toolbar
-	"browser_action": {
+    // Toolbar
+    "browser_action": {
         "default_title": "Adjust the page margins to improve readability."
     },
 
-	// Context scripts can read or modify the details of a webpage
-	"content_scripts": [
+    // Context scripts can read or modify the details of a webpage
+    "content_scripts": [
         {
             "matches": ["<all_urls>"],
             "css": ["content.css"],
@@ -27,12 +27,12 @@
         }
     ],
 
-	"permissions": [
-		"activeTab",
-		"http://*/*"
-	],
+    "permissions": [
+        "activeTab",
+        "http://*/*"
+    ],
 
-	"background": {
+    "background": {
         "page": "background.html"
     }
 }
